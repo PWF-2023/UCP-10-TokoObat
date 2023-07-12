@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// Barang
+Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
+Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
+Route::post('/barang', [BarangController::class, 'store'])->name('barang.store');
+Route::get('/barang/{barang}', [BarangController::class, 'show'])->name('barang.show');
+Route::get('/barang/{barang}/edit', [BarangController::class, 'edit'])->name('barang.edit');
+Route::put('/barang/{barang}', [BarangController::class, 'update'])->name('barang.update');
+Route::delete('/barang/{barang}', [BarangController::class, 'destroy'])->name('barang.destroy');
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,4 +38,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
