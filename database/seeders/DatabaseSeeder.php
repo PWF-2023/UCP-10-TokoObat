@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Barang;
 use Illuminate\Database\Seeder;
 use Illuminate\Foundation\Auth\User;
 
@@ -30,5 +32,7 @@ class DatabaseSeeder extends Seeder
             // password
             'is_admin' => false,
         ]);
+
+        Barang::factory(50)->create();
     }
 }
