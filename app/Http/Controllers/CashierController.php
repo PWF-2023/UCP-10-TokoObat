@@ -12,9 +12,23 @@ class CashierController extends Controller
      */
     public function index()
     {
-        $cashiers = User::where('is_admin', false)->get();
+        $search = request('search');
+        if ($search) {
+            $cashier = User::where(function ($query) use ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('email', 'like', '%' . $search . '%');
+            })
+                ->orderBy('name')
+                ->where('id', '!=', '1')
+                ->paginate(20)
+                ->withQueryString();
+        } else {
+            $cashier = User::where('id', '!=', '1')
+                ->orderBy('name')
+                ->paginate(10);
+        }
         // dd($cashiers);
-        return view('cashier.index', compact('cashiers'));
+        return view('cashier.index', compact('cashier'));
     }
 
     /**
