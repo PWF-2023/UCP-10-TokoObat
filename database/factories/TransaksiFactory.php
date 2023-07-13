@@ -14,7 +14,7 @@ class TransaksiFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama_costumer' => $this->faker->name(),
+            'nama_customer' => $this->faker->name(),
             'jumlah_item'   => $this->faker->randomNumber(1, 10),
             'total_item'    => $this->faker->numerify('#####'),
             'is_available'  => $this->faker->boolean(),
