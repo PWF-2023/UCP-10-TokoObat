@@ -10,7 +10,7 @@ class Transaksi extends Model
     use HasFactory;
     
     protected $fillable = [
-        'nama_costumer',
+        'nama_customer',
         'jumlah_item',
         'total_item',
         'is_available',
