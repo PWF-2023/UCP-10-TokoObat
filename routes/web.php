@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,8 @@ Route::get('/barang/{barang}', [BarangController::class, 'show'])->name('barang.
 Route::get('/barang/{barang}/edit', [BarangController::class, 'edit'])->name('barang.edit');
 Route::put('/barang/{barang}', [BarangController::class, 'update'])->name('barang.update');
 Route::delete('/barang/{barang}', [BarangController::class, 'destroy'])->name('barang.destroy');
+
+Route::get('/cashier', [CashierController::class, 'index'])->name('cashier.index');
 
 Route::get('/', function () {
     return view('welcome');
