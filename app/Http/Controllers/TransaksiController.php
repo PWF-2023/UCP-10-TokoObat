@@ -46,7 +46,7 @@ class TransaksiController extends Controller
     public function update(Request $request, Transaksi $barang)
     {
         $request->validate([
-            'nama_costumer'  => 'required',
+            'nama_customer'  => 'required',
             'jumlah_item'    => 'required',
             'total_item'     => 'required',
             'is_available'   => 'required',
