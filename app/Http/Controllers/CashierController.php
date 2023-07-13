@@ -12,9 +12,9 @@ class CashierController extends Controller
      */
     public function index()
     {
-        $cashier = User::where('is_admin', 0)->get();
-        // dd($cashier);
-        return view('cashier.index', compact('cashier'));
+        $cashiers = User::where('is_admin', false)->get();
+        dd($cashiers);
+        // return view('cashier.index', compact('cashiers'));
     }
 
     /**
