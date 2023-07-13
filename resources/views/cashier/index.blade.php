@@ -75,7 +75,8 @@
                                         <div class="flex space-x-3">
                                             {{-- Action here --}}
                                             @if ($cashiers->is_admin)
-                                                <form method="Post">
+                                                <form method="Post"
+                                                    action="{{ route('cashier.removeadmin', $cashiers) }}">
                                                     @csrf
                                                     @method('PATCH')
                                                     <button type="submit"
@@ -84,7 +85,8 @@
                                                     </button>
                                                 </form>
                                             @else
-                                                <form method="Post">
+                                                <form method="Post"
+                                                    action="{{ route('cashier.makeadmin', $cashiers) }}">
                                                     @csrf
                                                     @method('PATCH')
                                                     <button type="submit"
