@@ -95,7 +95,7 @@
                                                     </button>
                                                 </form>
                                             @endif
-                                            <form method="Post">
+                                            <form method="Post" action="{{ route('cashier.destroy', $cashiers) }}">
                                                 @csrf
                                                 @method('delete')
                                                 <button type="submit"
