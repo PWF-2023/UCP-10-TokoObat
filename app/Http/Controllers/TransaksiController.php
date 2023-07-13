@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -20,7 +21,7 @@ class TransaksiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_costumer'  => 'required',
+            'nama_customer'  => 'required',
             'jumlah_item'    => 'required',
             'total_item'     => 'required',
             'is_available'   => 'required',
