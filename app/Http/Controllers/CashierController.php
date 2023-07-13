@@ -31,32 +31,32 @@ class CashierController extends Controller
         return view('cashier.index', compact('cashier'));
     }
 
-    public function makeadmin(User $user)
+    public function makeadmin(User $cashier)
     {
-        $user->timestamps = false;
-        $user->is_admin   = true;
-        $user->save();
+        $cashier->timestamps = false;
+        $cashier->is_admin   = true;
+        $cashier->save();
         return back()->with('success', 'Make admin successfully!');
     }
 
-    public function removeadmin(User $user)
+    public function removeadmin(User $cashier)
     {
-        if ($user->id != 1) {
-            $user->timestamps = false;
-            $user->is_admin   = false;
-            $user->save();
+        if ($cashier->id != 1) {
+            $cashier->timestamps = false;
+            $cashier->is_admin   = false;
+            $cashier->save();
             return back()->with('success', 'Remove admin successfully!');
         } else {
-            return redirect()->route('user.index');
+            return redirect()->route('cashier.index');
         }
     }
-    public function destroy(User $user)
+    public function destroy(User $cashier)
     {
-        if ($user->id != 1) {
-            $user->delete();
+        if ($cashier->id != 1) {
+            $cashier->delete();
             return back()->with('success', 'Delete user successfully!');
         } else {
-            return redirect()->route('user.index')->with('danger', 'Delete user failed!');
+            return redirect()->route('cashier.index')->with('danger', 'Delete user failed!');
         }
     }
 }

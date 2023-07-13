@@ -26,6 +26,9 @@ Route::put('/barang/{barang}', [BarangController::class, 'update'])->name('baran
 Route::delete('/barang/{barang}', [BarangController::class, 'destroy'])->name('barang.destroy');
 
 Route::get('/cashier', [CashierController::class, 'index'])->name('cashier.index');
+Route::delete('/cashier/{cashier}', [CashierController::class, 'destroy'])->name('cashier.destroy');
+Route::patch('/cashier/{cashier}/makeadmin', [CashierController::class, 'makeadmin'])->name('cashier.makeadmin');
+Route::patch('/cashier/{cashier}/removeadmin', [CashierController::class, 'removeadmin'])->name('cashier.removeadmin');
 
 Route::get('/', function () {
     return view('welcome');
