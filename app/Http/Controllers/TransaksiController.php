@@ -10,7 +10,6 @@ class TransaksiController extends Controller
     public function index()
     {
         $transaksi = Transaksi::all();
-        dd($transaksi);
     }
 
     public function create()
@@ -24,7 +23,6 @@ class TransaksiController extends Controller
             'nama_customer'  => 'required',
             'jumlah_item'    => 'required',
             'total_item'     => 'required',
-            'is_available'   => 'required',
         ]);
 
         Transaksi::create($request->all());
@@ -49,7 +47,6 @@ class TransaksiController extends Controller
             'nama_customer'  => 'required',
             'jumlah_item'    => 'required',
             'total_item'     => 'required',
-            'is_available'   => 'required',
         ]);
 
         $transaksi->update($request->all());
