@@ -15,10 +15,14 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-
-                    <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cashier.*')">
+                    {{-- <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cahiser.index')">
                         {{ __('Cashier') }}
-                    </x-nav-link>
+                    </x-nav-link> --}}
+                    @can('admin')
+                        <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cashier.*')">
+                            {{ __('Cashier') }}
+                        </x-nav-link>
+                    @endcan
                 </div>
             </div>
 
@@ -82,9 +86,11 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cashier.*')">
-                {{ __('Cashier') }}
-            </x-nav-link>
+            @can('admin')
+                <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cashier.*')">
+                    {{ __('Cashier') }}
+                </x-nav-link>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->
