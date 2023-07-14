@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    {{-- <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cahiser.index')">
+                        {{ __('Cashier') }}
+                    </x-nav-link> --}}
                     @can('admin')
                         <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cashier.*')">
                             {{ __('Cashier') }}
