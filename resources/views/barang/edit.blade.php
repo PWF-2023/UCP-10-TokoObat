@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="harga_barang" :value="__('Price')" />
+                            <x-input-label for="harga_barang" :value="__('Harga')" />
                             <x-text-input id="harga_barang" name="harga_barang" type="decimal" class="mt-1 block w-full form-control"
                                 :value="old('harga_barang', $barang->harga_barang)" required autofocus autocomplete="harga_barang" />
                             <x-input-error class="mt-2" :messages="$errors->get('harga_barang')" />

@@ -29,13 +29,13 @@
                     </div>
                     <div class="relative overflow-x-auto">
                         <table
-                            class="w-full text-sm text-left text-gray-500 dark:text-gray-400 bg-blue-100 dark:bg-blue-900 border border-blue-200">
+                            class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
                             <thead
-                                class="text-xs text-gray-700 uppercase bg-blue-100 dark:bg-blue-900 dark:text-gray-400">
+                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
                                 <tr>
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
-                                        No
+                                        Id
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Nama
@@ -57,32 +57,34 @@
                                 @endphp
                                 @forelse ($barang as $item)
                                     <tr class="odd:bg-white odd:dark:bg-gray-800 even:bg-gray-50 even:dark:bg-gray-700">
-                                        <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                        <td scope="row" 
+                                            class="px-6 py-4 font-medium text-gray-900 dark:text-white">
                                             {{ $counter++ }}
                                         </td>
-                                        <td scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white">
-                                            <a href="{{ route('barang.edit', [$barang]) }}" class="hover:underline">
+                                        <td scope="row" 
+                                            class="px-6 py-4 font-medium text-gray-900 md:whitespace-nowrap dark:text-white">
+                                            <a href="{{ route('barang.edit', [$item]) }}" class="hover:underline">
                                                 {{ $item->nama_barang }}</a>
                                         </td>
 
-                                        <td class="px-6 py-4 md:block">
-                                            <a href="{{ route('barang.edit', [$barang]) }}"
+                                        <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                            <a href="{{ route('barang.edit', [$item]) }}"
                                                 class="hover:underline">
                                                 {{ $item->stok_barang }} </a>
                                            
                                         </td>
 
-                                        <td class="px-6 py-4 md:">
-                                            <a href="{{ route('barang.edit', [$barang]) }}"
+                                        <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                            <a href="{{ route('barang.edit', [$item]) }}"
                                                 class="hover:underline">
                                                 {{ $item->harga_barang }} </a>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="flex space-x-3">
-                                                <form action="{{ route('barang.destroy', [$barang]) }}" method="Post">
-                                                <a class="btn-sm btn btn-primary" href="{{ route('barang.edit',[$item->id]) }}">edit</a>
+                                                <form action="{{ route('barang.destroy', $item) }}" method="Post">
+                                                <a class="btn-sm btn btn-primary" href="{{ route('barang.edit',[$item->id]) }}">EDIT</a>
                                                     @csrf
-                                                    @method('DELETE')
+                                                    @method('delete')
                                                     <x-danger-button type="submit" class="text-red-600 dark:text-red-400">
                                                         DELETE
                                                     </x-danger-button>
@@ -100,9 +102,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="d-flex mt-2 justify-content-center">
-                        {!! $barang->links() !!}
-                    </div>
+                 
                 </div>
             </div>
         </div>
