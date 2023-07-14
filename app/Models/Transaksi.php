@@ -13,11 +13,6 @@ class Transaksi extends Model
         'nama_customer',
         'jumlah_item',
         'total_item',
-        'is_available',
-    ];
-
-    protected $casts = [
-        'is_available' => 'boolean',
     ];
 
     public function user()

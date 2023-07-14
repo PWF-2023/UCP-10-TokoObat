@@ -17,7 +17,6 @@ class TransaksiFactory extends Factory
             'nama_customer' => $this->faker->name(),
             'jumlah_item'   => $this->faker->randomNumber(1, 10),
             'total_item'    => $this->faker->numerify('#####'),
-            'is_available'  => $this->faker->boolean(),
         ];
     }
 }
