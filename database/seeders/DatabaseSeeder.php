@@ -19,21 +19,23 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         User::create([
-            'name'           => 'Admin',
-            'email'          => 'admin@example.com',
-            'password'       => bcrypt('password'),
-            'remember_token' => Str::random(10),
+            'name'              => 'Admin',
+            'email'             => 'admin@example.com',
+            'password'          => bcrypt('password'),
+            'remember_token'    => Str::random(10),
+            'email_verified_at' => now(),
             // password
-            'is_admin'       => true,
+            'is_admin'          => true,
         ]);
 
         User::create([
-            'name'           => 'User',
-            'email'          => 'user@example.com',
-            'password'       => bcrypt('password'),
-            'remember_token' => Str::random(10),
+            'name'              => 'User',
+            'email'             => 'user@example.com',
+            'password'          => bcrypt('password'),
+            'remember_token'    => Str::random(10),
+            'email_verified_at' => now(),
             // password
-            'is_admin'       => false,
+            'is_admin'          => false,
         ]);
 
         Barang::factory(50)->create();
