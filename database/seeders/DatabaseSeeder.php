@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Barang;
+use App\Models\Transaksi;
 use Illuminate\Database\Seeder;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Str;
@@ -39,5 +40,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Barang::factory(50)->create();
+        Transaksi::factory(50)->create();
     }
 }
