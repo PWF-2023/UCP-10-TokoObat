@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Transaksi extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'nama_customer',
         'jumlah_item',
@@ -19,5 +19,15 @@ class Transaksi extends Model
     protected $casts = [
         'is_available' => 'boolean',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function barang()
+    {
+        return $this->hasMany(Barang::class);
+    }
 
 }
