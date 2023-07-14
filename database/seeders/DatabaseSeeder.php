@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Barang;
 use Illuminate\Database\Seeder;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,19 +19,21 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         User::create([
-            'name'     => 'Admin',
-            'email'    => 'admin@example.com',
-            'password' => bcrypt('password'),
+            'name'           => 'Admin',
+            'email'          => 'admin@example.com',
+            'password'       => bcrypt('password'),
+            'remember_token' => Str::random(10),
             // password
-            'is_admin' => true,
+            'is_admin'       => true,
         ]);
 
         User::create([
-            'name'     => 'User',
-            'email'    => 'user@example.com',
-            'password' => bcrypt('password'),
+            'name'           => 'User',
+            'email'          => 'user@example.com',
+            'password'       => bcrypt('password'),
+            'remember_token' => Str::random(10),
             // password
-            'is_admin' => false,
+            'is_admin'       => false,
         ]);
 
         Barang::factory(50)->create();
