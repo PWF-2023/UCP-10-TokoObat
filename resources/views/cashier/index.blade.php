@@ -89,19 +89,19 @@
                                                     action="{{ route('cashier.makeadmin', $cashiers) }}">
                                                     @csrf
                                                     @method('PATCH')
-                                                    <button type="submit"
+                                                    <x-secondary-button type="submit"
                                                         class="text-red-600 dark:text-red-400 whitespace-nowrap">
                                                         Make Admin
-                                                    </button>
+                                                    </x-secondary-button>
                                                 </form>
                                             @endif
                                             <form method="Post" action="{{ route('cashier.destroy', $cashiers) }}">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit"
+                                                <x-danger-button type="submit"
                                                     class="text-red-600 dark:text-red-400 whitespace-nowrap">
                                                     Delete
-                                                </button>
+                                                </x-danger-button>
                                             </form>
                                         </div>
                                     </td>
