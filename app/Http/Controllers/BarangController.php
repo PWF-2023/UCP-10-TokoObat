@@ -15,16 +15,16 @@ class BarangController extends Controller
 
     public function index()
     {
-        /*dengan pagination*/
-        $barang = Barang::paginate(5);
+        // /*dengan pagination*/
+        // $barang = Barang::paginate(5);
         
-        return view('barang.index',compact('barang'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        // return view('barang.index',compact('barang'))
+        //     ->with('i', (request()->input('page', 1) - 1) * 5);
 
         /*tanpa pagination*/
-        // $barang = Barang::all();
+        $barang = Barang::all();
         
-        // return view('barang.index',compact('barang'));
+        return view('barang.index',compact('barang'));
     }
 
     
@@ -80,6 +80,6 @@ class BarangController extends Controller
         $barang->delete();
 
          return redirect()->route('barang.index')
-        ->with('success', 'Barang deleted successfully');
+        ->with('success', 'Barang Deleted successfully');
     }
 }
