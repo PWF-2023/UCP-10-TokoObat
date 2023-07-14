@@ -18,11 +18,15 @@
                     <x-nav-link :href="route('barang.index')" :active="request()->routeIs('barang.index')">
                         {{ __('Barang') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.*')">
+                        {{ __('Transaksi') }}
+                    </x-nav-link>
                     @can('admin')
                         <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cashier.index')">
                             {{ __('Cashier') }}
                         </x-nav-link>
                     @endcan
+
                 </div>
             </div>
 
@@ -86,6 +90,15 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+<<<<<<< Updated upstream
+=======
+            <x-nav-link :href="route('cashier.index')" :active="request()->routeIs('cashier.*')">
+                {{ __('Cashier') }}
+            </x-nav-link>
+            <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.*')">
+                {{ __('Transaksi') }}
+            </x-nav-link>
+>>>>>>> Stashed changes
         </div>
 
         <!-- Responsive Settings Options -->

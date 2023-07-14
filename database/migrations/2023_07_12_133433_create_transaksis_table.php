@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_customer', 100);
             $table->integer('jumlah_item');
             $table->integer('total_item');
+            $table->boolean('is_available')->default(true);
             $table->timestamps();
         });
     }
